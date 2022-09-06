@@ -21,15 +21,15 @@ export class Combo2Page implements OnInit {
     password:""
   }
   ingresar(){
-    // const animation: Animation = this.animationCtrl.create()
-    //   .addElement(document.querySelector('.animacion'))
-    //   .duration(1000)
-    //   .fromTo('opacity', '1', '0.2')
-    //   .duration(1500)
-    //   .iterations(Infinity)
-    //   .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
-    //   .fromTo('opacity', '1', '0.2');
-    // animation.play();
+    const animation: Animation = this.animationCtrl.create()
+      .addElement(document.querySelector('.animacion'))
+      .duration(1000)
+      .fromTo('opacity', '1', '0.2')
+      .duration(1500)
+      .iterations(Infinity)
+      .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
+      .fromTo('opacity', '1', '0.2');
+    animation.play();
 
     
     // Se declara e instancia un elemento de tipo NavigationExtras
@@ -42,6 +42,16 @@ export class Combo2Page implements OnInit {
   }
 
   tuPromo(){
+    // Se declara e instancia un elemento de tipo NavigationExtras
+    let navigationExtras: NavigationExtras = {
+      state: {
+        user: this.user // Al estado se asignamos un objeto con clave y valor
+      }
+    };
+    this.router.navigate(['/combo2'],navigationExtras); // navegamos hacia el Home y enviamos información adicional
+  }
+
+  back(){
     // Se declara e instancia un elemento de tipo NavigationExtras
     let navigationExtras: NavigationExtras = {
       state: {
